@@ -25,13 +25,8 @@ body, table{
 
 .App-header {
   /* background-color: rgba(0, 0, 0, 0.05); */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
+  position: relative;
+  z-index: 2;
 }
 
 .App-link {
@@ -100,15 +95,23 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
 
 .millionaire{
   position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin: auto;
+
   max-width: 1200px;
   width: 1200px;
-  /* background-color: #fff; */
+  /* background-color: #fff;
   border-radius: 15px;
-  padding: 15px;
+  padding: 15px; */
 }
 
 .millionaire__logo{
-  max-width: 200px;
+  max-width: 300px;
   display: inline-block;
   vertical-align: top;
   margin: 30px 0;
@@ -210,4 +213,59 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
 
 .millionaire__table tr:nth-child(even) td{
   background: rgba(210, 228, 255, .3)
+}
+
+.question{
+  margin: 0 auto 20px;
+  background: url('./assets/img/bg_question.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.answer{
+  position: relative;
+  z-index: 2;
+  margin: 0 auto 20px;
+  background: url('./assets/img/bg_answer.png') no-repeat center center;
+  background-size: contain;
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .3s ease;
+  opacity: .7;
+}
+
+.answer:hover{
+  opacity: .99;
+}
+
+.answer--wrong{
+  background-image: url('./assets/img/bg_answer__wrong.png');
+  opacity: .99;
+  cursor: default;
+}
+
+.answer--right{
+  background-image: url('./assets/img/bg_answer__right.png');
+  opacity: .99;
+  opacity: .99;
+}
+
+.letter{
+  color: #E4671E;
+}
+
+.answer--right .letter,
+.answer--wrong .letter{
+  color: #fff;
 }

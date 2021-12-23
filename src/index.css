@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url('./assets/img/bg.jpg') no-repeat center center #0B429A;
   background-size: cover;
+  color: #fff;
 }
 
 code {
