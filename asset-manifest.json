@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/REACT_SIMPLE_TEST/static/css/main.fe7f3a41.chunk.css",
-    "main.js": "/REACT_SIMPLE_TEST/static/js/main.ce3308a3.chunk.js",
-    "main.js.map": "/REACT_SIMPLE_TEST/static/js/main.ce3308a3.chunk.js.map",
+    "main.js": "/REACT_SIMPLE_TEST/static/js/main.dd5f2a6b.chunk.js",
+    "main.js.map": "/REACT_SIMPLE_TEST/static/js/main.dd5f2a6b.chunk.js.map",
     "runtime-main.js": "/REACT_SIMPLE_TEST/static/js/runtime-main.dedd4b4f.js",
     "runtime-main.js.map": "/REACT_SIMPLE_TEST/static/js/runtime-main.dedd4b4f.js.map",
     "static/js/2.41637692.chunk.js": "/REACT_SIMPLE_TEST/static/js/2.41637692.chunk.js",
@@ -17,12 +17,13 @@
     "static/media/icon__fifty.3d06a290.png": "/REACT_SIMPLE_TEST/static/media/icon__fifty.3d06a290.png",
     "static/media/icon__hall_help.1d686da3.png": "/REACT_SIMPLE_TEST/static/media/icon__hall_help.1d686da3.png",
     "static/media/logo.177354fb.png": "/REACT_SIMPLE_TEST/static/media/logo.177354fb.png",
-    "static/media/logoKapitalBank.3f779495.png": "/REACT_SIMPLE_TEST/static/media/logoKapitalBank.3f779495.png"
+    "static/media/logoKapitalBank.3f779495.png": "/REACT_SIMPLE_TEST/static/media/logoKapitalBank.3f779495.png",
+    "static/media/start.446fd270.mp3": "/REACT_SIMPLE_TEST/static/media/start.446fd270.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.dedd4b4f.js",
     "static/js/2.41637692.chunk.js",
     "static/css/main.fe7f3a41.chunk.css",
-    "static/js/main.ce3308a3.chunk.js"
+    "static/js/main.dd5f2a6b.chunk.js"
   ]
 }
