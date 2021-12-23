@@ -216,7 +216,7 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
 }
 
 .question{
-  margin: 0 auto 20px;
+  margin: 20px auto 30px;
   background: url('./assets/img/bg_question.png') no-repeat center center;
   background-size: cover;
   width: 100%;
@@ -235,7 +235,7 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   background: url('./assets/img/bg_answer.png') no-repeat center center;
   background-size: contain;
   width: 100%;
-  height: 110px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,6 +1,7 @@
 {
   "name": "react_simple_test",
   "version": "0.1.0",
+  "homepage": "https://timrawork.github.io/REACT_SIMPLE_TEST",
   "dependencies": {
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.7.1",
@@ -18,8 +19,7 @@
   "scripts": {
     "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
