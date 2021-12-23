@@ -11,10 +11,13 @@ import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { IconButton } from '@mui/material';
 // import questions from './questions.json';
 // import UpdateIcon from '@mui/icons-material/Update';
+// const audioSrc = require("./assets/audio/start.mp3");
+// import audioSrc from './assets/audio/start.mp3'
+import MUSIC_URL from './assets/audio/start.mp3';
 
 export const formatBalance = (balance) =>  balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
-const MUSIC_URL = 'https://timra.ru/portfolio/audio/music.mp3';
+// const MUSIC_URL = 'https://timra.ru/portfolio/audio/music.mp3';
 const STORAGE = 'react-game/playMusic';
 
 const App = () => {
@@ -57,8 +60,16 @@ const App = () => {
             <IconButton size="large" onClick={handleMusicToggleClick}>
               {isMusicPlayed ? <VolumeOffIcon /> : <VolumeUpIcon />}
               {isMusicPlayed && <audio autoPlay loop ref={refMusic} src={MUSIC_URL} />}
+              {/* {isMusicPlayed && <audio
+                ref="audio_tag"
+                autoPlay={true}
+                controls={true} >
+                <source type="audio/mp3" src={audioSrc} />
+              </audio>} */}
             </IconButton>
           </div>
+
+          
           
           {/* <div className="volume">
             <IconButton >
