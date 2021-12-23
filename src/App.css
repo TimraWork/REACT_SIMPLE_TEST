@@ -26,6 +26,7 @@ body, table{
 .App-header {
   /* background-color: rgba(0, 0, 0, 0.05); */
   position: relative;
+  width: 100%;
   z-index: 2;
 }
 
@@ -121,13 +122,13 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   position: absolute;
   left: 30px;
   top: 30px;
-  max-width: 60px;
+  max-width: 80px;
 }
 
 .icon_right{
   position: absolute;
   top: 30px;
-  max-width: 100px;
+  max-width: 120px;
   cursor: pointer;
   transition: all .3s ease-in-out;
 }

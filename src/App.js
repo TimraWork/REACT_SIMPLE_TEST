@@ -22,12 +22,12 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
-        <img src={iconFifty} alt="" className="icon_right icon_right--fifty" />
-        <img src={iconHall} alt="" className="icon_right icon_right--hall" />
-      </header>
       <div className="millionaire">
+        <header className="App-header">
+          <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
+          <img src={iconFifty} alt="" className="icon_right icon_right--fifty" />
+          <img src={iconHall} alt="" className="icon_right icon_right--hall" />
+        </header>
         <img src={logo} alt="KapitalBank" className="millionaire__logo" />
         <div className={`question`} onClick={onSelectChange}> Центр автомобилестроения США ? </div>
         <Grid container spacing={0}>
