@@ -3,33 +3,33 @@ import './App.css';
 import logoKapitalBank from "./assets/img/logoKapitalBank.png";
 import iconFifty from "./assets/img/icon__fifty.png";
 import iconHall from "./assets/img/icon__hall_help.png";
+import hallImg from "./assets/img/chart.svg";
 import logo from "./assets/img/logo.png";
 import Grid from '@mui/material/Grid';
-import Tooltip from '@mui/material/Tooltip';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import { IconButton } from '@mui/material';
-// import questions from './questions.json';
-// import UpdateIcon from '@mui/icons-material/Update';
-// const audioSrc = require("./assets/audio/start.mp3");
-// import audioSrc from './assets/audio/start.mp3'
+import { Fade, IconButton } from '@mui/material';
 import MUSIC_URL from './assets/audio/start.mp3';
+import { ChartPopup } from './components/ChartPopup/ChartPopup';
+import { Answer } from './components/Answer/Answer';
+import questionsJson from './questions.json';
 
 export const formatBalance = (balance) =>  balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
-// const MUSIC_URL = 'https://timra.ru/portfolio/audio/music.mp3';
 const STORAGE = 'react-game/playMusic';
+export const ANSWERS_LETTERS = ["A", "B", "C", "D"]
 
 const App = () => {
-  const [questions, setQuestions] = useState([]);
+  const [answerResult, setAnswerResult] = useState("");
+  const [openPopup, setOpenPopup] = useState(false);
+  const [hideTwoElements, setHideTwoElements] = useState(false);
+  const [showQuestion, setShowQuestion] = useState(false);
 
   const [isMusicPlayed, setIsMusicPlayed] = useState(true);
   const refMusic = useRef(null);
 
   useEffect(() => {
-    if (!refMusic.current) {
-      return;
-    }
+    if (!refMusic.current) { return; }
 
     if (isMusicPlayed) {
       refMusic.current.defaultMuted = false;
@@ -50,52 +50,46 @@ const App = () => {
     localStorage.setItem(STORAGE, JSON.stringify(!isMusicPlayed));
   };
 
+  const onPopupClose = () => setOpenPopup(false);
+  const onOpenPopupClick = () => setOpenPopup(true);
+  const onShowQuestion = () => setShowQuestion(!showQuestion);
+
+  const onFiftyClick = () => {
+   console.log('onFiftyCLick');
+   setHideTwoElements(!hideTwoElements);
+  };
+
   return (
     <div className="App">
-      <div className="millionaire">
-        <header className="App-header">
-          <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
-          
+      <Fade in={true} timeout={4000}>
+        <div className={`millionaire ${hideTwoElements ? 'hideTwo' : ''}`}>
+          <header className="App-header">
+            <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
+            <img src={iconFifty} alt="" className="icon_right icon_right--fifty" onClick={onFiftyClick} />
+            <img src={iconHall} onClick={onOpenPopupClick} alt="" className="icon_right icon_right--hall" />
+
+            <ChartPopup open={openPopup} color="white" onPopupClose={onPopupClose}>
+              <img src={hallImg} alt="" className="hallImg" />
+            </ChartPopup>
+          </header>
+
+          <img src={logo} alt="KapitalBank" className="millionaire__logo" />
+
+          {/* QUESTION zone */}
+          <div className={`question ${showQuestion ? '' : 'question--hide'}`} onClick={onShowQuestion}> {questionsJson[0].question} </div>
+          <Grid container spacing={0}>
+            { [0, 1, 2, 3].map( (idx) => <Answer answerResult={answerResult} key={idx} idx={idx} /> ) }
+          </Grid>
+          {/* QUESTION zone */}
+
           <div className="volume">
             <IconButton size="large" onClick={handleMusicToggleClick}>
               {isMusicPlayed ? <VolumeOffIcon /> : <VolumeUpIcon />}
-              {isMusicPlayed && <audio autoPlay loop ref={refMusic} src={MUSIC_URL} />}
-              {/* {isMusicPlayed && <audio
-                ref="audio_tag"
-                autoPlay={true}
-                controls={true} >
-                <source type="audio/mp3" src={audioSrc} />
-              </audio>} */}
+              {isMusicPlayed && <audio autoPlay ref={refMusic} src={MUSIC_URL} />}
             </IconButton>
           </div>
-
-          
-          
-          {/* <div className="volume">
-            <IconButton >
-              <UpdateIcon/>
-            </IconButton>
-          </div> */}
-          
-          <img src={iconFifty} alt="" className="icon_right icon_right--fifty" />
-          <Tooltip title={
-            <div className="tooltip_text">
-              <div className="tooltip_text__title">Подсказочка</div>
-              <div className="tooltip_text__text">Текст подсказочки. Xороший текст!!!</div>
-            </div>
-          }>
-            <img src={iconHall} alt="" className="icon_right icon_right--hall" />
-          </Tooltip>
-        </header>
-        <img src={logo} alt="KapitalBank" className="millionaire__logo" />
-        <div className={`question`} onClick={()=>{}}> Центр автомобилестроения США ? </div>
-        <Grid container spacing={0}>
-          <Grid item xs={6}> <div className="answer answer--wrong"> <span className="letter">A:&emsp;</span> Нью-Йорк </div> </Grid>
-          <Grid item xs={6}> <div className="answer  answer--right"> <span className="letter">B:&emsp;</span> Портсмут </div> </Grid>
-          <Grid item xs={6}> <div className="answer"> <span className="letter">C:&emsp;</span> Детройт </div> </Grid>
-          <Grid item xs={6}> <div className="answer"> <span className="letter">D:&emsp;</span> Чикаго </div> </Grid>
-        </Grid>
-      </div>
+        </div>
+      </Fade>
     </div>
   );
 }

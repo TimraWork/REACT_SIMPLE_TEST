@@ -1,0 +1,63 @@
+.popup {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup__inner {
+    position: relative;
+    z-index: 2;
+    background-color: #073988;
+    border-radius: 11px;
+    padding: 1.875rem 1.25rem 0.625rem 1.25rem;
+    width: 37.5rem;
+}
+.popup__inner--white {
+    background-color: 073988;
+}
+.popup__overflow {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 0.625rem 1.25rem;
+}
+.popup__info {
+    background: #073988;
+    margin-bottom: 20px;
+    border-radius: 1.25rem;
+    padding: 0.9375rem;
+    box-shadow: 0.3125rem 0.3125rem 0.3125rem rgba(0, 0, 0, 0.01);
+}
+.popup__exchange {
+    font-weight: 500;
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+.popup__exchange_item {
+    display: inline-block;
+    vertical-align: middle;
+    height: 1.25rem;
+}
+.popup__fee {
+    display: block;
+    color: #0099ef;
+    font-size: 1.125rem;
+    background-color: rgba(0, 173, 239, .1);
+    border-radius: 0.625rem;
+    padding: 0.3125rem 0.625rem;
+}
+.popup__text_element {
+    color: #1a1a1a;
+}
+.popup__amount {
+    color: #0099ef;
+    font-size: 1.125rem;
+    line-height: 1;
+}
+.popup__arrow_bottom {
+    text-align: center;
+    padding: 0.625rem 0 0.625rem;
+}
+.text_center{
+    text-align: center;
+}
