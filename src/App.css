@@ -20,21 +20,23 @@ body, table{
 body:after {
   content: "";
   position: absolute;
-  bottom: -20px;
+  /* bottom: -200px; */
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 1px;
+  height: 1px;
   background: url('./assets/img/bg_answer__right.png') no-repeat center center;
+  opacity: 0;
 }
 
 body:before {
   content: "";
   display: block;
   position: absolute;
-  bottom: -20px;
-  width: 20px;
-  height: 20px;
+  /* bottom: -200px; */
+  width: 1px;
+  height: 1px;
   background: url('./assets/img/bg_answer__wrong.png') no-repeat center center;
+  opacity: 0;
 }
 
 .App {
@@ -246,6 +248,12 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   opacity: .99;
 }
 
+.answer--answer{
+  background-image: url('./assets/img/bg_answer__right.png');
+  opacity: .99;
+  cursor: default;
+}
+
 .answer--wrong{
   background-image: url('./assets/img/bg_answer__wrong.png');
   opacity: .99;
@@ -271,6 +279,7 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   margin-left: 40px;
 }
 
+.answer--answer .answer__letter,
 .answer--right .answer__letter,
 .answer--wrong .answer__letter{
   color: #fff;
@@ -294,12 +303,11 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   font-size: 20px;
 }
 
-.volume{
+.volume, .showRightAnswer{
   position: absolute;
   z-index: 2;
   left: 0px;
   bottom: 20px;
-  transform: translateX(-50%);
   border: 5px solid white;
   width: 62px;
   height: 62px;
@@ -307,11 +315,16 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
   opacity: 0.04;
 }
 
-.volume svg{
+.showRightAnswer{
+  right: 0px;
+  left: auto;
+}
+
+.volume svg, .showRightAnswer svg{
   font-size: 30px;
 }
 
-.volume button{
+.volume button, .showRightAnswer button{
   color: #fff;
 }
 
@@ -323,3 +336,20 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
 .hideTwo .MuiGrid-container > div:nth-child(2n + 1) .answer {
   opacity: 0;
 }
+
+.rightAnswer .MuiGrid-container > div .answer__letter{
+  color: #fff !important;
+}
+
+.rightAnswer .MuiGrid-container > div .answer{
+  background-image: url('./assets/img/bg_answer.png');
+  opacity: 1;
+}
+
+.rightAnswer .MuiGrid-container > div:nth-child(2) .answer {
+  background-image: url('./assets/img/bg_answer__wrong.png') !important;
+}
+
+/* .rightAnswer .MuiGrid-container > div:nth-child(2) .answer {
+  bg_answer
+} */

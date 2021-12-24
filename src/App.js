@@ -10,9 +10,12 @@ import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
 import { Fade, IconButton } from '@mui/material';
 import MUSIC_URL from './assets/audio/start.mp3';
+import MUSIC_URL_QUESTION from './assets/audio/question.mp3';
+import MUSIC_URL_RIGHT_ANSWER from './assets/audio/correctAnswer.mp3';
 import { ChartPopup } from './components/ChartPopup/ChartPopup';
 import { Answer } from './components/Answer/Answer';
 import questionsJson from './questions.json';
+import CheckIcon from '@mui/icons-material/Check';
 
 export const formatBalance = (balance) =>  balance.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 
@@ -23,6 +26,7 @@ const App = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const [hideTwoElements, setHideTwoElements] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
+  const [showRightAnswer, setShowRightAnswer] = useState(false);
 
   const [isMusicPlayed, setIsMusicPlayed] = useState(true);
   const refMusic = useRef(null);
@@ -49,6 +53,10 @@ const App = () => {
     localStorage.setItem(STORAGE, JSON.stringify(!isMusicPlayed));
   };
 
+  const handleShowRightClick = () => {
+    setShowRightAnswer(!showRightAnswer);
+  };
+
   const onPopupClose = () => setOpenPopup(false);
   const onOpenPopupClick = () => setOpenPopup(true);
   const onShowQuestion = () => setShowQuestion(!showQuestion);
@@ -61,7 +69,7 @@ const App = () => {
   return (
     <div className="App">
       <Fade in={true} timeout={4000}>
-        <div className={`millionaire ${hideTwoElements ? 'hideTwo' : ''}`}>
+        <div className={`millionaire ${hideTwoElements ? 'hideTwo' : ''} ${showRightAnswer ? 'rightAnswer' : ''} `}>
           <header className="App-header">
             <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
             <img src={iconFifty} alt="" className="icon_right icon_right--fifty" onClick={onFiftyClick} />
@@ -76,15 +84,24 @@ const App = () => {
 
           {/* QUESTION zone */}
           <div className={`question ${showQuestion ? '' : 'question--hide'}`} onClick={onShowQuestion}> {questionsJson[0].question} </div>
+          { (showQuestion && !showRightAnswer) && <audio autoPlay src={MUSIC_URL_QUESTION} />}
+
           <Grid container spacing={0}>
-            { [0, 1, 2, 3].map( (idx) => <Answer idx={idx} /> ) }
+            { [0, 1, 2, 3].map( (idx) => <Answer idx={idx} key={idx} /> ) }
           </Grid>
           {/* QUESTION zone */}
 
           <div className="volume">
             <IconButton size="large" onClick={handleMusicToggleClick}>
               {isMusicPlayed ? <VolumeOffIcon /> : <VolumeUpIcon />}
-              {isMusicPlayed && <audio autoPlay ref={refMusic} src={MUSIC_URL} />}
+              {isMusicPlayed && <audio autoPlay src={MUSIC_URL} />}
+            </IconButton>
+          </div>
+
+          <div className="showRightAnswer">
+            <IconButton size="large" onClick={handleShowRightClick}>
+              <CheckIcon />
+              {showRightAnswer && <audio autoPlay src={MUSIC_URL_RIGHT_ANSWER} />}
             </IconButton>
           </div>
         </div>
