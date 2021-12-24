@@ -296,7 +296,8 @@ h2 { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20p
 }
 
 .hallImg{
-  max-width: 500px;
+  width: 500px;
+  margin-top: 30px;
 }
 
 .hideTwo .MuiGrid-container > div:nth-child(2n + 1) .answer {
