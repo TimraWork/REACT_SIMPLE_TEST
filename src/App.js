@@ -20,7 +20,6 @@ const STORAGE = 'react-game/playMusic';
 export const ANSWERS_LETTERS = ["A", "B", "C", "D"]
 
 const App = () => {
-  const [answerResult, setAnswerResult] = useState("");
   const [openPopup, setOpenPopup] = useState(false);
   const [hideTwoElements, setHideTwoElements] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
@@ -78,7 +77,7 @@ const App = () => {
           {/* QUESTION zone */}
           <div className={`question ${showQuestion ? '' : 'question--hide'}`} onClick={onShowQuestion}> {questionsJson[0].question} </div>
           <Grid container spacing={0}>
-            { [0, 1, 2, 3].map( (idx) => <Answer answerResult={answerResult} key={idx} idx={idx} /> ) }
+            { [0, 1, 2, 3].map( (idx) => <Answer idx={idx} /> ) }
           </Grid>
           {/* QUESTION zone */}
 
