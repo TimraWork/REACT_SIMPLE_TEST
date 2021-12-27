@@ -8,7 +8,7 @@ import logo from "./assets/img/logo.png";
 import Grid from '@mui/material/Grid';
 import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import { Fade, IconButton } from '@mui/material';
+import { Fade, IconButton, Tooltip } from '@mui/material';
 import MUSIC_URL from './assets/audio/start.mp3';
 import MUSIC_URL_QUESTION from './assets/audio/question.mp3';
 import MUSIC_URL_RIGHT_ANSWER from './assets/audio/correctAnswer.mp3';
@@ -73,7 +73,7 @@ const App = () => {
           <header className="App-header">
             <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
             <img src={iconFifty} alt="" className="icon_right icon_right--fifty" onClick={onFiftyClick} />
-            <Tooltip title="Delete"><img src={iconHall} onClick={onOpenPopupClick} alt="" className="icon_right icon_right--hall" /></Tooltip>
+            <Tooltip title="Кликайте на поля, чтобы появился текст и заиграла музыка"><img src={iconHall} onClick={onOpenPopupClick} alt="" className="icon_right icon_right--hall" /></Tooltip>
             <ChartPopup open={openPopup} color="white" onPopupClose={onPopupClose}>
               <img src={hallImg} alt="" className="hallImg" />
             </ChartPopup>
