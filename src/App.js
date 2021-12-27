@@ -73,8 +73,7 @@ const App = () => {
           <header className="App-header">
             <img src={logoKapitalBank} alt="KapitalBank" className="logoKapitalBank" />
             <img src={iconFifty} alt="" className="icon_right icon_right--fifty" onClick={onFiftyClick} />
-            <img src={iconHall} onClick={onOpenPopupClick} alt="" className="icon_right icon_right--hall" />
-
+            <Tooltip title="Delete"><img src={iconHall} onClick={onOpenPopupClick} alt="" className="icon_right icon_right--hall" /></Tooltip>
             <ChartPopup open={openPopup} color="white" onPopupClose={onPopupClose}>
               <img src={hallImg} alt="" className="hallImg" />
             </ChartPopup>
