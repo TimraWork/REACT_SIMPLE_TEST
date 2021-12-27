@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/REACT_SIMPLE_TEST/static/css/main.079981bc.chunk.css",
-    "main.js": "/REACT_SIMPLE_TEST/static/js/main.d9775607.chunk.js",
-    "main.js.map": "/REACT_SIMPLE_TEST/static/js/main.d9775607.chunk.js.map",
-    "runtime-main.js": "/REACT_SIMPLE_TEST/static/js/runtime-main.4a2ab395.js",
-    "runtime-main.js.map": "/REACT_SIMPLE_TEST/static/js/runtime-main.4a2ab395.js.map",
-    "static/js/2.5e172257.chunk.js": "/REACT_SIMPLE_TEST/static/js/2.5e172257.chunk.js",
-    "static/js/2.5e172257.chunk.js.map": "/REACT_SIMPLE_TEST/static/js/2.5e172257.chunk.js.map",
-    "static/js/3.66567fe6.chunk.js": "/REACT_SIMPLE_TEST/static/js/3.66567fe6.chunk.js",
-    "static/js/3.66567fe6.chunk.js.map": "/REACT_SIMPLE_TEST/static/js/3.66567fe6.chunk.js.map",
+    "main.css": "/REACT_SIMPLE_TEST/static/css/main.a59a3dfa.chunk.css",
+    "main.js": "/REACT_SIMPLE_TEST/static/js/main.7cab421e.chunk.js",
+    "main.js.map": "/REACT_SIMPLE_TEST/static/js/main.7cab421e.chunk.js.map",
+    "runtime-main.js": "/REACT_SIMPLE_TEST/static/js/runtime-main.b122db69.js",
+    "runtime-main.js.map": "/REACT_SIMPLE_TEST/static/js/runtime-main.b122db69.js.map",
+    "static/js/2.999ac2c9.chunk.js": "/REACT_SIMPLE_TEST/static/js/2.999ac2c9.chunk.js",
+    "static/js/2.999ac2c9.chunk.js.map": "/REACT_SIMPLE_TEST/static/js/2.999ac2c9.chunk.js.map",
+    "static/js/3.f4debd6c.chunk.js": "/REACT_SIMPLE_TEST/static/js/3.f4debd6c.chunk.js",
+    "static/js/3.f4debd6c.chunk.js.map": "/REACT_SIMPLE_TEST/static/js/3.f4debd6c.chunk.js.map",
     "index.html": "/REACT_SIMPLE_TEST/index.html",
-    "static/css/main.079981bc.chunk.css.map": "/REACT_SIMPLE_TEST/static/css/main.079981bc.chunk.css.map",
-    "static/js/2.5e172257.chunk.js.LICENSE.txt": "/REACT_SIMPLE_TEST/static/js/2.5e172257.chunk.js.LICENSE.txt",
+    "static/css/main.a59a3dfa.chunk.css.map": "/REACT_SIMPLE_TEST/static/css/main.a59a3dfa.chunk.css.map",
+    "static/js/2.999ac2c9.chunk.js.LICENSE.txt": "/REACT_SIMPLE_TEST/static/js/2.999ac2c9.chunk.js.LICENSE.txt",
     "static/media/answer.a97712cc.mp3": "/REACT_SIMPLE_TEST/static/media/answer.a97712cc.mp3",
     "static/media/index.css": "/REACT_SIMPLE_TEST/static/media/bg.507aa3b1.jpg",
     "static/media/App.css": "/REACT_SIMPLE_TEST/static/media/bg_question.e2a26cad.png",
@@ -27,9 +27,9 @@
     "static/media/wrong.585aa0fd.mp3": "/REACT_SIMPLE_TEST/static/media/wrong.585aa0fd.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.4a2ab395.js",
-    "static/js/2.5e172257.chunk.js",
-    "static/css/main.079981bc.chunk.css",
-    "static/js/main.d9775607.chunk.js"
+    "static/js/runtime-main.b122db69.js",
+    "static/js/2.999ac2c9.chunk.js",
+    "static/css/main.a59a3dfa.chunk.css",
+    "static/js/main.7cab421e.chunk.js"
   ]
 }
